@@ -1,5 +1,8 @@
 import smtplib
 import email
+from email.header import Header
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 import oauth2
 import base64
 import json
@@ -23,9 +26,9 @@ def sendUpdate(msg, to, sub="Daily Update"): #Can specify a custom subject line 
 
     mail.docmd('AUTH','XOAUTH2 ' + oauth2String)
 
-    message = 'Subject: %s\n\n%s' % (sub, msg)
-
-    mail.sendmail(email_id, to, message)
+    message = MIMEMultipart('alternative')
+    message['Subject'] = sub
+    html = MIMEText(msg.encode('utf-8'), 'html', 'utf-8')
+    message.attach(html)
+    mail.sendmail(email_id, to, message.as_string())
     print 'Message sent.'
-
-
