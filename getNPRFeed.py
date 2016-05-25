@@ -4,7 +4,7 @@ from urllib2 import urlopen
 from json import load
 
 url = 'http://api.npr.org/query?apiKey='
-key = 'get_api_key_from_npr
+key = 'get_api_key_from_npr'
 url = url + key
 url = url + '&format=json&id=1001' #1001 is news id
 
