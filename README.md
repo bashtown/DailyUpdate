@@ -2,6 +2,8 @@
 
 Python program for Raspberry Pi that sends an email every morning with the weather for that day and the top NPR news stories.
 
+I have included in this repo the necessary oauth2 module.
+
 Goodmorning.py is the file which actually sends the email to all desired recipients. The program grabs the days weather from the included weather module. Weather forecast can be added by including additional calls to weather, increasing the day value in each call (i.e. hiTemp=weather.high(1) will get the forecasted high temperature for tomorrow). The news feed is grabbed from the included getNPRFeed module. Inside this file is a list of recipients and a constructor to make new recipients. An example is included which show how to create a new recipient and add them to the list. Finally the email with the weather and news is sent to each recipient in the list.
 
 Weather.py gets weather data from Yahoo weather. By default the weather module gets weather data for Boston, but this can be changed by editing the woeid in the url. The response from the weather api is converted to json and the 10 day forecast is extracted. The module includes methods to get the weather code, condition, high and low temps, date, and day of the week for each of the ten days in the forecast.
