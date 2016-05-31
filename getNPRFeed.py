@@ -1,5 +1,3 @@
-import feedparser #may need to install feedparser module
-from pprint import pprint
 from urllib2 import urlopen
 from json import load
 
