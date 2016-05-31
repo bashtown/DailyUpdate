@@ -18,8 +18,8 @@ class recipient:
 		self.email = e
 	
 
-newPerson = recipient("Firstname", "email@adress.com")
-recipients.append(newPerson)
+JohnDoe = recipient("John", "JohnDoe123@FakeEmail.com")
+recipients.append(JohnDoe)
 
 
 
